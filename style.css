@@ -1,0 +1,84 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: black;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin: 40px 0;
+  color: #00ffcc;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+  margin: 60px auto;
+  width: 80%;
+  max-width: 900px;
+  padding: 60px;
+  background: #111;
+  border: 5px solid transparent;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  box-shadow: none;
+  color: #aaa;
+}
+
+/* Active effect on scroll */
+.section.active {
+  opacity: 1;
+  transform: translateY(0);
+  background: linear-gradient(135deg, #222, #000);
+  border-color: #00ffc8;
+  box-shadow: 0 0 20px #00ffc855;
+  color: #ffffff;
+  animation: glow 1.5s ease forwards;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px #00ffc8;
+  }
+  50% {
+    box-shadow: 0 0 30px #00ffc8aa;
+  }
+  100% {
+    box-shadow: 0 0 10px #00ffc855;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    margin: 30px 20px;
+  }
+
+  .section {
+    padding: 40px 20px;
+    font-size: 20px;
+    margin: 40px auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin: 20px 15px;
+  }
+
+  .section {
+    padding: 30px 15px;
+    font-size: 18px;
+    margin: 30px auto;
+    width: 90%;
+  }
+}
