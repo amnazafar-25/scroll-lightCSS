@@ -1,12 +1,16 @@
- const sections=
-        document.querySelectorAll('.section');
-        window.addEventListener('scroll',()=>{
-            sections.forEach(section=> {
-                const sectionTop=
-                section.getBoundingClientRect().top;
-                const triggerPoint = window.innerHeight-100;
-                if(sectionTop < triggerPoint){
-                    section.classList.add('active');
-                }
-            });
-        });
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
